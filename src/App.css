@@ -1,1 +1,38 @@
- 
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;800;900&display=swap);
+
+:root {
+  /* Background-colors */
+  --mainBgColor: #202020;
+  --bodyBgColor: #181818;
+  --searchBgColor: #121212;
+  /* Text-colors */
+  --textGrayColor: #aaaaaa;
+  --textWhiteColor: #fff;
+  /* Effects */
+  --hoverColor: #383838;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  user-select: none;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background-color: var(--bodyBgColor);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+small {
+  color: var(--textWhiteColor);
+}
+h6,
+p,
+span {
+  color: var(--textGrayColor);
+}
