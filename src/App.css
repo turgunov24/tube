@@ -23,6 +23,9 @@
 body {
   background-color: var(--bodyBgColor);
 }
+nav{
+  background-color: var(--mainBgColor);
+}
 h1,
 h2,
 h3,
