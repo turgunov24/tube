@@ -1,9 +1,4 @@
-#navbar-top-logo-before::before{
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-}
+
 #navbar-top-search-input{
     border: none;
     outline: none;
