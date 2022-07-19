@@ -10,7 +10,7 @@ import { AiOutlineUser } from "react-icons/ai";
 
 function NavbarTop() {
   return (
-    <nav className="shadow-xl border-b-[0.5px] border-gray-700 px-2 gap-1 flex items-center xs:gap-2 sm:gap-3">
+    <nav className="shadow-xl border-b-[0.5px] border-gray-700 px-2 py-1 gap-1 flex items-center xs:gap-2 sm:gap-3">
       <div className="p-1">
         <IconButton sx={{ color: "white" }}>
           <FcMenu />
