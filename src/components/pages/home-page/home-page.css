@@ -1,7 +1,8 @@
 #home-page-keywords{
-    overflow-x: scroll;
-    border: 0.5px solid #3b3b3b;
-    
+    overflow-x: scroll !important;
+    border-bottom: 0.5px solid #3b3b3b;
+    min-height: 60px !important;
+    background-color: var(--mainBgColor);
 }
 /* #home-page-keywords::after{
     content: "";
@@ -12,6 +13,7 @@
     right: 0;   
     background:linear-gradient(to right, transparent 30%,#202020 70%);
 } */
+
 #home-page-keywords::-webkit-scrollbar{
     height: 0px;
 }
@@ -27,4 +29,30 @@
 #home-page-keys:hover{
     background-color: #fff;
     color: #000;
+}
+/* left-side */
+#home-page-navlinks{
+    background-color: var(--mainBgColor);
+}
+#home-page-navlink{
+    transition: all linear .2s;
+}
+#home-page-navlink:hover{
+    background-color: var(--hoverColor);
+}
+/* main-content */
+#home-page-main{
+    overflow-y: scroll !important;
+}
+#home-page-main::-webkit-scrollbar{
+    width: 10px;
+
+}
+#home-page-main::-webkit-scrollbar-track{
+    background-color: var(--hoverColor);
+
+}
+#home-page-main::-webkit-scrollbar-thumb{
+    background-color: #AAAAAA;
+    border-radius: 10px;
 }
