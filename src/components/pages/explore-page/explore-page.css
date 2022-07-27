@@ -1,0 +1,29 @@
+#explore-page-keywords{
+    min-height: 150px !important;
+    overflow-x: scroll !important;
+}
+#explore-page-keywords::-webkit-scrollbar{
+    height: 5px;
+}
+#explore-page-keywords::-webkit-scrollbar-track{
+    background-color: var(--hoverColor);
+}
+#explore-page-keywords::-webkit-scrollbar-thumb{
+    background-color: var(--textGrayColor);
+    border-radius: 10px;
+}
+/*  */
+
+#explore-page-keyword{
+    min-width: 240px !important;
+    cursor: pointer;
+    background-color: var(--mainBgColor);
+    border-radius: 10px;
+    transition: all linear .1s;
+}
+#explore-page-keyword:hover{
+    background-color: var(--hoverColor);
+}
+#explore-page-keyword:hover h1{
+    text-shadow: 0px 0px 10px white;
+}

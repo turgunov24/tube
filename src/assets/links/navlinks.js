@@ -14,13 +14,14 @@ import {
 } from "react-icons/md";
 
 export const navlinks = [
-  { name: "Home", url: { ytHomeIcon }, icon: { VscHome } },
-  { name: "Explore", url: { ytExploreIcon }, icon: { MdOutlineExplore } },
-  { name: "Shorts", url: { ytShortsIcon }, icon: { MdSlowMotionVideo } },
+  { name: "Home", url: { ytHomeIcon }, icon: <VscHome /> ,to:"/" },
+  { name: "Explore", url: { ytExploreIcon }, icon: <MdOutlineExplore />,to:"/explore" },
+  { name: "Shorts", url: { ytShortsIcon }, icon: <MdSlowMotionVideo />,to:"/shorts" },
   {
     name: "Subscriptions",
     url: { ytSubscriptionsIcon },
-    icon: { MdSubscriptions },
+    icon: <MdSubscriptions />,
+    to:"/subscriptions"
   },
-  { name: "Library", url: { ytLibraryIcon }, icon: { MdVideoLibrary } },
+  { name: "Library", url: { ytLibraryIcon }, icon: <MdVideoLibrary />,to:"/library" },
 ];

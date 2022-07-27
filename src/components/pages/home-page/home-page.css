@@ -30,29 +30,5 @@
     background-color: #fff;
     color: #000;
 }
-/* left-side */
-#home-page-navlinks{
-    background-color: var(--mainBgColor);
-}
-#home-page-navlink{
-    transition: all linear .2s;
-}
-#home-page-navlink:hover{
-    background-color: var(--hoverColor);
-}
-/* main-content */
-#home-page-main{
-    overflow-y: scroll !important;
-}
-#home-page-main::-webkit-scrollbar{
-    width: 10px;
 
-}
-#home-page-main::-webkit-scrollbar-track{
-    background-color: var(--hoverColor);
 
-}
-#home-page-main::-webkit-scrollbar-thumb{
-    background-color: #AAAAAA;
-    border-radius: 10px;
-}

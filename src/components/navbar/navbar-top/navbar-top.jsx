@@ -7,13 +7,14 @@ import { FcMenu } from "react-icons/fc";
 import { BsYoutube, BsBell } from "react-icons/bs";
 import { HiOutlineSearch } from "react-icons/hi";
 import { AiOutlineUser } from "react-icons/ai";
+import { FiMenu } from "react-icons/fi"
 
 function NavbarTop() {
   return (
-    <nav className="shadow-xl border-b-[0.5px] border-gray-700 px-2 py-1 gap-1 flex items-center xs:gap-2 sm:gap-3">
+    <nav className="w-full shadow-xl border-b-[0.5px] border-gray-700 px-4 py-1 gap-1 flex items-center xs:gap-2 sm:gap-3">
       <div className="p-1">
         <IconButton sx={{ color: "white" }}>
-          <FcMenu />
+          <FiMenu />
         </IconButton>
       </div>
       <div id="navbar-top-logo" className=" hidden xs:flex items-center gap-1">

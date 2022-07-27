@@ -1,0 +1,16 @@
+#sidebar{
+    background-color: var(--mainBgColor);
+    width: 80px !important;
+}
+
+#sidebar-link{
+    transition: all linear .1s;
+}
+#sidebar-link:hover{
+    background-color: var(--hoverColor);
+}
+#sidebar-link:hover h1{
+    background-color: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}

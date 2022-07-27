@@ -1,0 +1,15 @@
+#main-div{
+    overflow-y: scroll !important;
+}
+#main-div::-webkit-scrollbar{
+    width: 10px;
+
+}
+#main-div::-webkit-scrollbar-track{
+    background-color: var(--hoverColor);
+
+}
+#main-div::-webkit-scrollbar-thumb{
+    background-color: #AAAAAA;
+    border-radius: 10px;
+}
