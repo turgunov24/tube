@@ -6,10 +6,14 @@ import YouTubeCard from "../../../additional/youTubeCards/ytCard";
 
 //additional
 import { FcBarChart, FcMusic, FcElectricity,FcBiohazard,FcNews,FcSportsMode,FcBiotech,FcLike } from "react-icons/fc";
+import Appbar from "../../navbar/appbar/appbar";
+
+
+
 
 function ExploreSection() {
   return (
-    <section className="w-full h-full flex flex-col justify-start">
+    <section className="relative w-full h-full flex flex-col justify-start">
       <NavbarTop />
       <div className="flex-grow flex overflow-hidden">
         <Sidebar />
@@ -67,6 +71,7 @@ function ExploreSection() {
           <YouTubeCard />
         </div>
       </div>
+      <Appbar />
     </section>
   );
 }

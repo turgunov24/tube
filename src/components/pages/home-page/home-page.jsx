@@ -6,10 +6,11 @@ import YouTubeCard from "../../../additional/youTubeCards/ytCard";
 
 //additional
 import { keywords } from "../../../assets/links/keyword";
+import Appbar from "../../navbar/appbar/appbar";
 
 function HomeSection() {
   return (
-    <section className="w-full h-full flex flex-col ">
+    <section className="relative w-full h-full flex flex-col ">
       <NavbarTop />
       <div className="flex-grow flex overflow-hidden">
         <Sidebar />
@@ -38,6 +39,7 @@ function HomeSection() {
           {/* main-end */}
         </div>
       </div>
+      <Appbar />
     </section>
   );
 }
