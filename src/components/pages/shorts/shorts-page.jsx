@@ -1,5 +1,8 @@
 import React from "react";
 import "./shorts-page.css";
+
+
+//additional
 import NavbarTop from "../../navbar/navbar-top/navbar-top";
 import Sidebar from "../../navbar/sidebar/sidebar";
 import YouTubeCard from "../../../additional/youTubeCards/ytCard";

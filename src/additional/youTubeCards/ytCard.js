@@ -1,4 +1,4 @@
-import * as React from "react";
+import React,{ createContext,useContext } from "react";
 import axios from "axios";
 import "./ytCard.css";
 
@@ -21,14 +21,17 @@ const customDataAnimation = {
   },
 };
 
+
+
 export default function YouTubeCard() {
   const [data, setdata] = React.useState([]);
   React.useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/photos")
+      .get(`https://jsonplaceholder.typicode.com/photos`)
       .then((res) => setdata(res.data.slice(0, 10)));
   }, []);
 
+  
   return (
     <div
       id="main-div"

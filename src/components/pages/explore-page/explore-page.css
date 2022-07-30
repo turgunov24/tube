@@ -1,6 +1,7 @@
 #explore-page-keywords{
     min-height: 150px !important;
     overflow-x: scroll !important;
+    scroll-snap-type: x mandatory;
 }
 #explore-page-keywords::-webkit-scrollbar{
     height: 5px;
@@ -20,6 +21,7 @@
     background-color: var(--mainBgColor);
     border-radius: 10px;
     transition: all linear .1s;
+    scroll-snap-align: start;
 }
 #explore-page-keyword:hover{
     background-color: var(--hoverColor);

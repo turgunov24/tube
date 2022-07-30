@@ -7,7 +7,6 @@ import  { customAnimation } from "../../../App"
 import { motion } from "framer-motion" 
 
 function Sidebar() {
-  navlinks.forEach(item => console.log(item.icon))
   return (
     <div id="sidebar" className="hidden md:flex flex-col items-center h-full">
       {navlinks.map((link, key) => (

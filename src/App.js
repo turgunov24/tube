@@ -7,16 +7,18 @@ import SubscriptionsSection from "./components/pages/subscriptions/subscriptions
 import LibrarySection from "./components/pages/library/library-page";
 //aditional
 import { AnimatePresence } from "framer-motion";
+import LoginSection from "./components/pages/login-page/login/login";
+
 
 export const customAnimation = {
-  hidden:{
-    opacity:0,
+  hidden: {
+    opacity: 0,
   },
-  visible:{
+  visible: {
     opacity: 1,
-    transition:{duration:0.5}
-  }
-}
+    transition: { duration: 0.5 },
+  },
+};
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
       <AnimatePresence>
         <BrowserRouter>
           <Routes>
+            {/* <Route path="/" element={<LoginSection />} /> */}
             <Route path="/" element={<HomeSection />} />
             <Route path="/explore" element={<ExploreSection />} />
             <Route path="/shorts" element={<ShortsSection />} />

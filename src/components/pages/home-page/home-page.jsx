@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./home-page.css";
 import NavbarTop from "../../navbar/navbar-top/navbar-top";
 import Sidebar from "../../navbar/sidebar/sidebar";
@@ -7,6 +7,8 @@ import YouTubeCard from "../../../additional/youTubeCards/ytCard";
 //additional
 import { keywords } from "../../../assets/links/keyword";
 import Appbar from "../../navbar/appbar/appbar";
+
+ 
 
 function HomeSection() {
   return (
@@ -40,7 +42,10 @@ function HomeSection() {
         </div>
       </div>
       <Appbar />
+      {/* <LabelBottomNavigation /> */}
     </section>
   );
+  
 }
+
 export default HomeSection;
