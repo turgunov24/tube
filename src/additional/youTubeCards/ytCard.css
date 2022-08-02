@@ -13,3 +13,10 @@
     background-color: #AAAAAA;
     border-radius: 10px;
 }
+/* youtube-card-inner-rounded-image */
+#youtube-card-inner-rounded-image{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+}

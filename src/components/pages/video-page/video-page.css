@@ -1,0 +1,16 @@
+#video-page-grow-div{
+    overflow-y: scroll;
+}
+#video-page-grow-div::-webkit-scrollbar{
+    width: 10px;
+
+}
+#video-page-grow-div::-webkit-scrollbar-track{
+    background-color: var(--hoverColor);
+    border-radius: 10px;
+}
+#video-page-grow-div::-webkit-scrollbar-thumb{
+    background-color: #AAAAAA;
+    border-radius: 10px;
+}
+/*  */

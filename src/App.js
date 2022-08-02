@@ -5,10 +5,11 @@ import ExploreSection from "./components/pages/explore-page/explore-page";
 import ShortsSection from "./components/pages/shorts/shorts-page";
 import SubscriptionsSection from "./components/pages/subscriptions/subscriptions-page";
 import LibrarySection from "./components/pages/library/library-page";
+import SignIn from "./components/pages/login-page/sign-in";
+import SignUp from "./components/pages/login-page/sign-up";
+import VideoSection from "./components/pages/video-page/video-page"
 //aditional
 import { AnimatePresence } from "framer-motion";
-import LoginSection from "./components/pages/login-page/login/login";
-
 
 export const customAnimation = {
   hidden: {
@@ -22,16 +23,18 @@ export const customAnimation = {
 
 function App() {
   return (
-    <div className="App w-full h-screen ">
+    <div className="App w-full h-screen">
       <AnimatePresence>
         <BrowserRouter>
           <Routes>
-            {/* <Route path="/" element={<LoginSection />} /> */}
-            <Route path="/" element={<HomeSection />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/" element={<SignUp />} />
+            <Route path="/home" exact element={<HomeSection />} />
             <Route path="/explore" element={<ExploreSection />} />
             <Route path="/shorts" element={<ShortsSection />} />
             <Route path="/subscriptions" element={<SubscriptionsSection />} />
             <Route path="/library" element={<LibrarySection />} />
+            <Route path="/video" element={<VideoSection />} />
           </Routes>
         </BrowserRouter>
       </AnimatePresence>

@@ -8,6 +8,7 @@ import { BsYoutube, BsBell } from "react-icons/bs";
 import { HiOutlineSearch } from "react-icons/hi";
 import { AiOutlineUser } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi"
+import { Link } from "react-router-dom";
 
 function NavbarTop() {
   return (
@@ -45,7 +46,7 @@ function NavbarTop() {
           <BsBell />
         </IconButton>
         <IconButton id="IconButton">
-          <AiOutlineUser />
+          <Link to="/signin"><AiOutlineUser /></Link>
         </IconButton>
       </div>
     </nav>

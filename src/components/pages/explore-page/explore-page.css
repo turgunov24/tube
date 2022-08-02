@@ -21,7 +21,7 @@
     background-color: var(--mainBgColor);
     border-radius: 10px;
     transition: all linear .1s;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
 }
 #explore-page-keyword:hover{
     background-color: var(--hoverColor);

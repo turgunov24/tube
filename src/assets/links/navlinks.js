@@ -14,7 +14,7 @@ import {
 } from "react-icons/md";
 
 export const navlinks = [
-  { name: "Home", url: { ytHomeIcon }, icon: <VscHome /> ,to:"/" },
+  { name: "Home", url: { ytHomeIcon }, icon: <VscHome /> ,to:"/home" },
   { name: "Explore", url: { ytExploreIcon }, icon: <MdOutlineExplore />,to:"/explore" },
   { name: "Shorts", url: { ytShortsIcon }, icon: <MdSlowMotionVideo />,to:"/shorts" },
   {
