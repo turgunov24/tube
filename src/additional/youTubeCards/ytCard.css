@@ -15,8 +15,13 @@
 }
 /* youtube-card-inner-rounded-image */
 #youtube-card-inner-rounded-image{
-    width: 45px;
-    height: 45px;
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50% !important;
+    overflow: hidden;
+}
+#youtube-card-inner-rounded-image img{
+    width: 100% !important;
+    height: 100%;
     object-fit: cover;
-    border-radius: 50%;
 }

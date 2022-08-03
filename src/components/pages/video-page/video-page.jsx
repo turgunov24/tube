@@ -22,12 +22,11 @@ const animateEmotes = {
   },
 };
 
+
 function VideoSection() {
   const [svideo, setsvideo] = useState(selectedVideos);
   const [likeCount, setlikeCount] = useState();
-  const isliked = (i) => {
-    i.classList.add("hi");
-  };
+
   return (
     <section className="w-full h-full flex flex-col overflow-hidden">
       <NavbarTop />
@@ -49,40 +48,32 @@ function VideoSection() {
                 >
                   <motion.h5 variants={animateEmotes} whileHover="hover">
                     {" "}
-                    <AiFillLike onClick={isliked} className="emote text-xl" />
+                    <AiFillLike className="emote text-xl" />
                   </motion.h5>
                   {likeCount}
                 </li>
                 <li className="flex gap-2 items-center">
                   <motion.h5 variants={animateEmotes} whileHover="hover">
                     {" "}
-                    <AiFillDislike
-                      onClick={isliked}
-                      className="emote text-xl"
-                    />
+                    <AiFillDislike className="emote text-xl" />
                   </motion.h5>
                   <h5>Dislike</h5>
                 </li>
                 <li className="flex gap-2 items-center">
                   <motion.h5 variants={animateEmotes} whileHover="hover">
-                    <RiShareForwardFill
-                      onClick={isliked}
-                      className="emote text-xl"
-                    />{" "}
+                    <RiShareForwardFill className="emote text-xl" />{" "}
                   </motion.h5>
                   <h5>Share</h5>
                 </li>
                 <li className="flex gap-2 items-center">
                   <motion.h5 variants={animateEmotes} whileHover="hover">
-                    <MdSaveAlt onClick={isliked} className="emote text-xl" />{" "}
+                    <MdSaveAlt className="emote text-xl" />{" "}
                   </motion.h5>
                   <h5>Save</h5>
                 </li>
               </ul>
             </div>
-            <div className="border border-green-400 w-full p-5">
-
-            </div>
+            <div className="border border-green-400 w-full p-5"></div>
           </div>
           <div
             id="video-page-grow-div"
@@ -95,7 +86,10 @@ function VideoSection() {
                   .includes(svideo[0].title.slice(0, 1).toLowerCase())
               )
               .map((item, index) => (
-                <div key={index} className="flex w-full h-28 gap-3 ">
+                <div
+                  key={index}
+                  className="flex w-full h-28 gap-3 "
+                >
                   <div className="rounded-xl overflow-hidden w-2/5">
                     <img
                       src={item.img}

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./ytCard.css";
@@ -27,16 +27,40 @@ const customDataAnimation = {
   },
 };
 
-
-export const selectedVideos = []
-
+export const selectedVideos = [];
 
 export default function YouTubeCard() {
   const [data, setdata] = React.useState(customYoutubeData);
-  // React.useEffect(() => {
+
+  // const options = {
+  //   method: "GET",
+  //   url: "https://youtube138.p.rapidapi.com/playlist/videos/",
+  //   params: { id: "PLcirGkCPmbmFeQ1sm4wFciF03D_EroIfr", hl: "en", gl: "US" },
+  //   headers: {
+  //     "X-RapidAPI-Key": "8b44c7ea48msh97966e97040f02ap146371jsnbad531f42542",
+  //     "X-RapidAPI-Host": "youtube138.p.rapidapi.com",
+  //   },
+  // };
+
+  // axios
+  //   .request(options)
+  //   .then(function (response) {
+  //     setdata(response.data.contents);
+  //     console.log(response.data);
+  //   })
+  //   .catch(function (error) {
+  //     console.error(error);
+  //   });
+
+  // useEffect(() => {
   //   axios
-  //     .get(`https://jsonplaceholder.typicode.com/photos`)
-  //     .then((res) => setdata(res.data.slice(0, 10)));
+  //     .request(options)
+  //     .then(function (response) {
+  //       console.log(response.data);
+  //     })
+  //     .catch(function (error) {
+  //       console.error(error);
+  //     });
   // }, []);
 
   const navigate = useNavigate();
@@ -52,8 +76,8 @@ export default function YouTubeCard() {
             <motion.div
               key={index}
               onClick={() => {
-                selectedVideos.unshift(card)
-                navigate("/video")
+                selectedVideos.unshift(card);
+                navigate("/video");
               }}
               variants={customDataAnimation}
               initial="hidden"
@@ -61,17 +85,22 @@ export default function YouTubeCard() {
               whileHover="hover"
               className="w-[270px] h-64 flex flex-col items-start gap-2 p-2"
             >
-              <img src={card.img} alt={card.id} className="w-full h-40" />
+              <img
+                src={card.img}
+                alt={card.id}
+                className="w-full h-40"
+              />
               {/* <h2>{card.title.slice(0, 10)}</h2> */}
               <div className="flex w-full flex-grow gap-3">
                 <div>
-                  <img
-                    id="youtube-card-inner-rounded-image"
-                    src={card.channelImage}
-                  />
+                  <div id="youtube-card-inner-rounded-image">
+                    <img src={card.channelImage} />
+                  </div>
                 </div>
                 <div className="flex-grow">
-                  <h1 className="text-lg font-semibold pb-1">{card.title}</h1>
+                  <h1 className="text-lg font-semibold pb-1">
+                    {card.title} ...
+                  </h1>
                   <p className="text-sm">{card.channel}</p>
                   <p className="text-sm">2.3K views * 14 hours ago</p>
                 </div>
