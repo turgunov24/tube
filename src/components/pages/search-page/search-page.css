@@ -1,0 +1,6 @@
+#search-page-youtube-card-inner-rounded-image img{
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    overflow: hidden;
+}

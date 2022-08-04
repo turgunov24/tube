@@ -24,21 +24,22 @@ const animateEmotes = {
 
 
 function VideoSection() {
-  const [svideo, setsvideo] = useState(selectedVideos);
   const [likeCount, setlikeCount] = useState();
-
+  const [secondSelected,setSecondSelected] = useState([])
+  const [isTure,setIsTrue] = useState(true)
+  const [selected,setSelected] = useState(isTure ? selectedVideos:secondSelected)
   return (
     <section className="w-full h-full flex flex-col overflow-hidden">
       <NavbarTop />
-      {svideo && (
-        <div className="flex-grow flex flex-col gap-5 p-5 overflow-hidden md:flex-row">
+      {selected && (
+        <div onClick={()=> setIsTrue(true)} className="flex-grow flex flex-col gap-5 p-5 overflow-hidden md:flex-row">
           <div className="flex flex-col gap-2 pb-2 w-full md:w-3/5">
             <iframe
-              src={svideo[0].iframe}
+              src={selected[0].iframe}
               frameborder="0"
               className="rounded-xl h-[35vh] sm:h-[45vh] md:h-[50vh] xl:h-[60vh]"
             ></iframe>
-            <h1 className="font-bold text-lg md:text-2xl">{svideo[0].title}</h1>
+            <h1 className="font-bold text-lg md:text-2xl">{selected[0].title}</h1>
             <div className="w-full py-1 flex flex-wrap items-center justify-between gap-2">
               <p className="">2.3K views * 14 hours ago</p>
               <ul className="flex items-center gap-5 text-white">
@@ -83,12 +84,16 @@ function VideoSection() {
               .filter((related) =>
                 related.title
                   .toLowerCase()
-                  .includes(svideo[0].title.slice(0, 1).toLowerCase())
+                  .includes(selected[0].title.slice(0, 1).toLowerCase())
               )
               .map((item, index) => (
                 <div
                   key={index}
                   className="flex w-full h-28 gap-3 "
+                  onClick={()=> {
+                    setIsTrue(false)
+                    secondSelected.unshift(item)
+                  }}
                 >
                   <div className="rounded-xl overflow-hidden w-2/5">
                     <img

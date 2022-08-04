@@ -10,6 +10,7 @@ import SignUp from "./components/pages/login-page/sign-up";
 import VideoSection from "./components/pages/video-page/video-page"
 //aditional
 import { AnimatePresence } from "framer-motion";
+import SearchSection from "./components/pages/search-page/search-page";
 
 export const customAnimation = {
   hidden: {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/subscriptions" element={<SubscriptionsSection />} />
             <Route path="/library" element={<LibrarySection />} />
             <Route path="/video" element={<VideoSection />} />
+            <Route path="/search" element={<SearchSection />} />
           </Routes>
         </BrowserRouter>
       </AnimatePresence>

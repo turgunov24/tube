@@ -28,15 +28,15 @@ function SignIn() {
           emailRef.current.value !== user.name &&
           passwordRef.current.value == user.password
         ) {
-          emailRef.current.style.boxShadow = "0px 0px 10px red";
+          emailRef.current.style.outline = "1px solid red";
         } else if (
           emailRef.current.value == user.name &&
           passwordRef.current.value !== user.password
         ) {
-          passwordRef.current.style.boxShadow = "0px 0px 10px red";
+          passwordRef.current.style.outline = "1px solid red";
         } else {
-          emailRef.current.style.boxShadow = "0px 0px 10px red";
-          passwordRef.current.style.boxShadow = "0px 0px 10px red";
+          emailRef.current.style.outline = "1px solid red";
+          passwordRef.current.style.outline = "1px solid red"
         }
         // emailRef.current.value = "";
         // passwordRef.current.value = "";
