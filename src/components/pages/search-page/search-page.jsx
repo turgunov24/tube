@@ -5,7 +5,7 @@ import NavbarTop, {
   searchResults,
 } from "../../../components/navbar/navbar-top/navbar-top";
 import { customYoutubeData } from "../../../additional/youtubeData/youtubeData";
-import { selectedVideos } from "../../../additional/youTubeCards/ytCard"
+import { selectedVideos } from "../../../additional/youTubeCards/ytCard";
 import Sidebar from "../../../components/navbar/sidebar/sidebar";
 import Appbar from "../../navbar/appbar/appbar";
 
@@ -32,14 +32,15 @@ function SearchSection() {
           {searched
             ? searched.map((founded, key) => (
                 <div
+                  id="search-page-videos"
                   key={key}
                   className="flex gap-2 w-full h-36 lg:h-64"
                   onClick={() => {
-                    navigate("/video")
-                    selectedVideos.unshift(founded)
+                    navigate("/video");
+                    selectedVideos.unshift(founded);
                   }}
                 >
-                  <div className="rounded-xl overflow-hidden w-2/5 h-full md:w-1/5">
+                  <div className="rounded-xl overflow-hidden w-2/5 h-full sm:w-1/5">
                     <img
                       src={founded.img}
                       className="object-cover w-full h-full"

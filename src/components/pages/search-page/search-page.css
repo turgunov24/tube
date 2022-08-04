@@ -4,3 +4,12 @@
     border-radius: 50% !important;
     overflow: hidden;
 }
+#search-page-videos{
+    height: 110px !important;
+    width: 100%;
+}
+@media screen and (min-width:768px) {
+    #search-page-videos{
+        height: 130px !important;
+    }
+}

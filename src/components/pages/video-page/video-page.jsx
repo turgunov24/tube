@@ -19,27 +19,35 @@ const animateEmotes = {
       type: "spring",
       stiffness: 300,
     },
+    cursor: "pointer",
   },
 };
 
-
 function VideoSection() {
   const [likeCount, setlikeCount] = useState();
-  const [secondSelected,setSecondSelected] = useState([])
-  const [isTure,setIsTrue] = useState(true)
-  const [selected,setSelected] = useState(isTure ? selectedVideos:secondSelected)
+  const [secondSelected, setSecondSelected] = useState([]);
+  const [isTure, setIsTrue] = useState(true);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [selected, setSelected] = useState(
+    isTure ? selectedVideos : secondSelected
+  );
   return (
     <section className="w-full h-full flex flex-col overflow-hidden">
       <NavbarTop />
       {selected && (
-        <div onClick={()=> setIsTrue(true)} className="flex-grow flex flex-col gap-5 p-5 overflow-hidden md:flex-row">
+        <div
+          onClick={() => setIsTrue(true)}
+          className="flex-grow flex flex-col gap-5 p-5 overflow-hidden md:flex-row"
+        >
           <div className="flex flex-col gap-2 pb-2 w-full md:w-3/5">
             <iframe
               src={selected[0].iframe}
               frameborder="0"
               className="rounded-xl h-[35vh] sm:h-[45vh] md:h-[50vh] xl:h-[60vh]"
             ></iframe>
-            <h1 className="font-bold text-lg md:text-2xl">{selected[0].title}</h1>
+            <h1 className="font-bold text-lg md:text-2xl">
+              {selected[0].title}
+            </h1>
             <div className="w-full py-1 flex flex-wrap items-center justify-between gap-2">
               <p className="">2.3K views * 14 hours ago</p>
               <ul className="flex items-center gap-5 text-white">
@@ -64,17 +72,55 @@ function VideoSection() {
                   <motion.h5 variants={animateEmotes} whileHover="hover">
                     <RiShareForwardFill className="emote text-xl" />{" "}
                   </motion.h5>
-                  <h5>Share</h5>
+                  <h5
+                    onClick={() => {
+                      window.navigator.clipboard.writeText(selected[0].iframe);
+                      alert("copied");
+                    }}
+                  >
+                    Share
+                  </h5>
                 </li>
                 <li className="flex gap-2 items-center">
                   <motion.h5 variants={animateEmotes} whileHover="hover">
                     <MdSaveAlt className="emote text-xl" />{" "}
                   </motion.h5>
-                  <h5>Save</h5>
+                  <h5>
+                    <a href="#" download={selected[0].img}>
+                      Save
+                    </a>
+                  </h5>
                 </li>
               </ul>
             </div>
-            <div className="border border-green-400 w-full p-5"></div>
+            <div className="border-y-[1px] border-y-gray-600 flex items-center w-full py-1 gap-3">
+              <div className="rounded-full overflow-hidden w-[50px] h-[50px]">
+                <img
+                  src={selected[0].channelImage}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="flex flex-col gap-1 items-start">
+                <h1 className="text-lg font-bold md:text-xl">
+                  {selected[0].channel}
+                </h1>
+                <p>310K subscribers</p>
+              </div>
+              <button
+                onClick={() => setIsSubscribed(!isSubscribed)}
+                className={
+                  isSubscribed
+                    ? "ml-auto text-gray-300 bg-gray-700 px-8 py-2"
+                    : "ml-auto text-white bg-red-700 px-8 py-2"
+                }
+              >
+                {isSubscribed ? "Subcribed" : "Subcribe"}
+              </button>
+            </div>
+            <h5 className="border-b-[1px] border-gray-600 py-1">
+              {" "}
+              {selected[0].description}
+            </h5>
           </div>
           <div
             id="video-page-grow-div"
@@ -90,9 +136,9 @@ function VideoSection() {
                 <div
                   key={index}
                   className="flex w-full h-28 gap-3 "
-                  onClick={()=> {
-                    setIsTrue(false)
-                    secondSelected.unshift(item)
+                  onClick={() => {
+                    setIsTrue(false);
+                    secondSelected.unshift(item);
                   }}
                 >
                   <div className="rounded-xl overflow-hidden w-2/5">
