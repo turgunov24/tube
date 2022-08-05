@@ -11,6 +11,8 @@ import VideoSection from "./components/pages/video-page/video-page"
 //aditional
 import { AnimatePresence } from "framer-motion";
 import SearchSection from "./components/pages/search-page/search-page";
+import HistorySection from "./components/pages/history-page/history-page";
+
 
 export const customAnimation = {
   hidden: {
@@ -37,6 +39,7 @@ function App() {
             <Route path="/library" element={<LibrarySection />} />
             <Route path="/video" element={<VideoSection />} />
             <Route path="/search" element={<SearchSection />} />
+            <Route path="/history" element={<HistorySection />} />
           </Routes>
         </BrowserRouter>
       </AnimatePresence>

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./navbar-top.css";
+import FixedNavbar from "../fixed-navbar/fixed-navbar";
 import { customYoutubeData } from "../../../additional/youtubeData/youtubeData";
 
 //assets
@@ -8,13 +9,14 @@ import { IconButton, Button } from "@mui/material";
 import { BsYoutube, BsBell } from "react-icons/bs";
 import { HiOutlineSearch } from "react-icons/hi";
 import { AiOutlineUser } from "react-icons/ai";
-import { FiMenu } from "react-icons/fi";
+import { FiExternalLink, FiMenu } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 export const searchResults = [];
 
 function NavbarTop() { 
   const searchPageNavigate = useNavigate();
+  const [fixedToggle,setFixedToggle] = useState(false)
 
   function searching(e) {
     // if (e.target.value.charAt(e.target.value.length-1).keyCode == 13) {
@@ -30,7 +32,7 @@ function NavbarTop() {
   return (
     <nav className="w-full shadow-xl border-b-[0.5px] border-gray-700 px-4 py-1 gap-1 flex items-center xs:gap-2 sm:gap-3">
       <div className="p-1">
-        <IconButton sx={{ color: "white" }}>
+        <IconButton sx={{ color: "white" }} onClick={()=> setFixedToggle(true)}>
           <FiMenu />
         </IconButton>
       </div>
@@ -73,6 +75,7 @@ function NavbarTop() {
           </Link>
         </IconButton>
       </div>
+      <FixedNavbar fixedtoggle={fixedToggle} setFixedToggle={setFixedToggle}/>
     </nav>
   );
 }

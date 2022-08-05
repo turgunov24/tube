@@ -7,7 +7,7 @@ import { customYoutubeData } from "../youtubeData/youtubeData";
 //additional
 import { motion } from "framer-motion";
 
-const customDataAnimation = {
+export const customDataAnimation = {
   hidden: {
     opacity: 0,
     // y: "10vh",
