@@ -16,12 +16,11 @@ function SignUp() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
-  // validationFunction
+  // validationFunction 
 
   const navigate = useNavigate();
   const signValidation = (e) => {
     e.preventDefault();
-
     if (emailRef.current.value !== "" && passwordRef.current.value !== "") {
       youtubeUsers.push({
         name: emailRef.current.value,
