@@ -10,7 +10,6 @@ import { MdHistory,MdOutlineWatchLater} from "react-icons/md";
 import { AiOutlineLike } from "react-icons/ai"
 
 function FixedNavbar({ fixedtoggle, setFixedToggle }) {
-  console.log(fixedtoggle);
   return (
     <nav
       className={

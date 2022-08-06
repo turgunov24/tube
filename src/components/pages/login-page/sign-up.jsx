@@ -27,20 +27,21 @@ function SignUp() {
         name: emailRef.current.value,
         password: passwordRef.current.value,
       });
-      navigate("/home")
-      localStorage.setItem("userData", JSON.stringify(youtubeUsers));
+      navigate("/home");
     } else {
       if (emailRef.current.value == "" && passwordRef.current.value !== "") {
         emailRef.current.style.boxShadow = "0px 0px 10px red";
-      }
-      else if (emailRef.current.value != "" && passwordRef.current.value == "") {
+      } else if (
+        emailRef.current.value != "" &&
+        passwordRef.current.value == ""
+      ) {
         passwordRef.current.style.boxShadow = "0px 0px 10px red";
-      }
-      else{
+      } else {
         emailRef.current.style.boxShadow = "0px 0px 10px red";
         passwordRef.current.style.boxShadow = "0px 0px 10px red";
       }
     }
+    localStorage.setItem("userData", JSON.stringify(youtubeUsers));
   };
 
   return (
