@@ -26,23 +26,22 @@ const animateEmotes = {
 function VideoSection() {
   const [likeCount, setlikeCount] = useState();
   const [secondSelected, setSecondSelected] = useState([]);
-  const [isTure, setIsTrue] = useState(true);
   const [isSubscribed, setIsSubscribed] = useState(false);
-  const [selected, setSelected] = useState(
-    isTure ? selectedVideos : secondSelected
-  );
+
+  const [selected,setSelected] = useState(JSON.parse(localStorage.getItem('selectedVideos')))
+
   return (
     <section className="w-full h-full flex flex-col overflow-hidden">
       <NavbarTop />
       {selected && (
         <div
-          onClick={() => setIsTrue(true)}
           className="flex-grow flex flex-col gap-5 p-5 overflow-hidden md:flex-row"
         >
           <div className="flex flex-col gap-2 pb-2 w-full md:w-3/5">
             <iframe
               src={selected[0].iframe}
               frameborder="0"
+              allowFullScreen
               className="rounded-xl h-[35vh] sm:h-[45vh] md:h-[50vh] xl:h-[60vh]"
             ></iframe>
             <h1 className="font-bold text-lg md:text-2xl">
@@ -136,10 +135,6 @@ function VideoSection() {
                 <div
                   key={index}
                   className="flex w-full h-28 gap-3 "
-                  onClick={() => {
-                    setIsTrue(false);
-                    secondSelected.unshift(item);
-                  }}
                 >
                   <div className="rounded-xl overflow-hidden w-2/5">
                     <img

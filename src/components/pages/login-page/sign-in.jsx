@@ -17,7 +17,6 @@ function SignIn() {
   const navigate = useNavigate();
   const loginValidation = (e) => {
     e.preventDefault()
-    console.log(users);
     users.map((user) => {
       if (
         emailRef.current.value == user.name &&

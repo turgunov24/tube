@@ -30,7 +30,7 @@ export const customDataAnimation = {
 export const selectedVideos = [];
 
 export default function YouTubeCard() {
-  const [data, setdata] = React.useState(customYoutubeData);
+  const [data, setdata] = useState(customYoutubeData);
 
   // const options = {
   //   method: "GET",
@@ -78,6 +78,10 @@ export default function YouTubeCard() {
               onClick={() => {
                 selectedVideos.unshift(card);
                 navigate("/video");
+                localStorage.setItem(
+                  "selectedVideos",
+                  JSON.stringify(selectedVideos)
+                );
               }}
               variants={customDataAnimation}
               initial="hidden"
@@ -85,11 +89,7 @@ export default function YouTubeCard() {
               whileHover="hover"
               className="w-[270px] h-64 flex flex-col items-start gap-2 p-2"
             >
-              <img
-                src={card.img}
-                alt={card.id}
-                className="w-full h-40"
-              />
+              <img src={card.img} alt={card.id} className="w-full h-40" />
               {/* <h2>{card.title.slice(0, 10)}</h2> */}
               <div className="flex w-full flex-grow gap-3">
                 <div>
