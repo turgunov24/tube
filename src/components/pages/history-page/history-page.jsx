@@ -1,29 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./history-page.css";
-import {
-  customDataAnimation,
-  selectedVideos,
-} from "../../../additional/youTubeCards/ytCard";
+import { customDataAnimation,selectedVideos } from "../../../additional/youTubeCards/ytCard";
 import { motion } from "framer-motion";
 import NavbarTop from "../../navbar/navbar-top/navbar-top";
 import Sidebar from "../../navbar/sidebar/sidebar";
 import Appbar from "../../navbar/appbar/appbar";
 import { useNavigate } from "react-router-dom";
+import { stringify } from "postcss";
 
 function HistorySection() {
+
+  const [watched,setWatched] = useState(JSON.parse(localStorage.getItem('selectedVideos')))
+
   const navigate = useNavigate();
   return (
     <section className="relative w-full h-full flex flex-col overflow-hidden">
       <NavbarTop />
       <div className="flex-grow flex justify-start overflow-hidden">
         <Sidebar />
-        <div id="history-page-grow-div" className="flex-grow p-5 flex flex-wrap items-start justify-center overflow-y-scroll md:justify-start">
-          {selectedVideos &&
-            selectedVideos.map((historyVideos, key) => (
+        <div
+          id="history-page-grow-div"
+          className="flex-grow p-5 flex flex-wrap items-start justify-center overflow-y-scroll md:justify-start"
+        >
+          {watched &&
+            watched.map((historyVideos, key) => (
               <motion.div
                 key={key}
                 onClick={() => {
-                  selectedVideos.unshift(historyVideos);
                   navigate("/video");
                 }}
                 variants={customDataAnimation}
@@ -40,7 +43,10 @@ function HistorySection() {
                 <div className="flex w-full flex-grow gap-3">
                   <div>
                     <div id="history-page-card-inner-rounded-image">
-                      <img className="w-full h-full" src={historyVideos.channelImage} />
+                      <img
+                        className="w-full h-full"
+                        src={historyVideos.channelImage}
+                      />
                     </div>
                   </div>
                   <div className="flex-grow">

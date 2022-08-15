@@ -49,7 +49,7 @@ function SignIn() {
       variants={customAnimation}
       initial="hidden"
       animate="visible"
-      className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white w-full h-full flex flex-col p-10 gap-6 rounded-xl overflow-hidden sm:w-4/6 sm:h-5/6 shadow-lg md:w-1/2 md:h-4/6 lg:w-[440px]"
+      className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white w-full h-full flex flex-col p-10 gap-6 rounded-xl overflow-hidden sm:w-4/6 sm:h-5/6 shadow-lg md:w-1/2 md:h-4/6 lg:w-[440px] lg:h-3/4"
     >
       <span className="font-thin">Welcome back! 👋</span>
       <h1 className="text-black text-3xl font-thin">Log in to your account</h1>
